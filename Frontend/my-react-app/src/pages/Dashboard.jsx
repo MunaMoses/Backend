@@ -10,7 +10,10 @@ import img4 from "../assets/img4.jpg";
 
 import "./Dashboard.css"; // ← put the CSS below in this file
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = (
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://wholesale-qtojynuu0-munamoses-projects.vercel.app"
+).replace(/\/+$/, "");
 
 const Dashboard = () => {
   const [activePage, setActivePage] = useState("home");

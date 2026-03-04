@@ -3,6 +3,11 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
+const API_BASE = (
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://wholesale-qtojynuu0-munamoses-projects.vercel.app"
+).replace(/\/+$/, "");
+
 const Register = () => {
   const navigate = useNavigate();
 
@@ -51,7 +56,7 @@ const Register = () => {
     }
 
     try {
-      await axios.post("http://127.0.0.1:8000/register/", {
+      await axios.post(`${API_BASE}/register/`, {
         username: formData.username,
         email: formData.email,
         password: formData.password,

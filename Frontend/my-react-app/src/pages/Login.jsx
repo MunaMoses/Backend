@@ -3,6 +3,11 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
+const API_BASE = (
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://wholesale-qtojynuu0-munamoses-projects.vercel.app"
+).replace(/\/+$/, "");
+
 const Login = () => {
   const navigate = useNavigate();
 
@@ -44,7 +49,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/login/", {
+      const response = await axios.post(`${API_BASE}/login/`, {
         username: formData.username,
         password: formData.password,
       });
