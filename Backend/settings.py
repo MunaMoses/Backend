@@ -153,9 +153,13 @@ STORAGES = {
         'BACKEND': 'django.core.files.storage.FileSystemStorage',
     },
     'staticfiles': {
-        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+        'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
     },
 }
+
+# Allow WhiteNoise to serve static assets from app finders when collectstatic
+# output isn't present in serverless environments.
+WHITENOISE_USE_FINDERS = True
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
