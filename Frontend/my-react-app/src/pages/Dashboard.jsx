@@ -12,7 +12,7 @@ import "./Dashboard.css"; // ← put the CSS below in this file
 
 const API_BASE = (
   import.meta.env.VITE_API_BASE_URL ||
-  "https://backend-psi-two-26.vercel.app"
+  "/api"
 ).replace(/\/+$/, "");
 
 const Dashboard = () => {

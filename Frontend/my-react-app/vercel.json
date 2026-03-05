@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://backend-psi-two-26.vercel.app/$1"
+    }
+  ]
+}
